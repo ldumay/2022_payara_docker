@@ -36,6 +36,7 @@ Voici toutes la documentation utilisé.
 - Docker Hub
   - [Debian](https://hub.docker.com/_/debian)
   - [Jenkins](https://hub.docker.com/_/jenkins)
+  - [Mariadb](https://hub.docker.com/_/mariadb)
   - [Payara Micro](https://hub.docker.com/r/payara/micro)
 
 ### Autres
