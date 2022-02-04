@@ -16,25 +16,25 @@ docker run -di --name debian -p 80:80 debian
 > - **-p 80:80** :
 >   - permet de précier le port de communication interne et externe du conteneur
 
-Le conteneur est automatiquement démarrer et maintenu en activité.
+## 2 - Création d'un docker MariaDB
 
-Il est possible de vérifier l'activité des conteneur avec la commande :
+On va créer un conteneur debian nommé **mariadb**.
 
 ```
-docker ps
+docker run --detach --name mariadb --env MARIADB_USER=ldumay --env MARIADB_PASSWORD=test --env MARIADB_ROOT_PASSWORD=root -p 3306:3306 mariadb:latest
+```
+
+Pour se connecté au serveur mariadb, il faut connaitre l'**IP du conteneur**.
+
+```
+docker run -it --rm mariadb mysql -h 0.0.0.0:3306 -u ldumay -p
 ```
 
 OU
 
 ```
-docker container list
-```
-
-Vous devriez obtenir :
-
-```
-CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS          PORTS                NAMES
-a8fd93e56b7e   debian    "bash"    10 minutes ago   Up 10 minutes   0.0.0.0:80->80/tcp   debian
+docker stop mariadb
+docker run -it --rm mariadb mysql -h 0.0.0.0:3306 -u root -p
 ```
 
 ## 2 - Création d'un docker Jenkins

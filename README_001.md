@@ -30,11 +30,21 @@ docker pull <image>
 
 ##### a) La liste des conteneurs
 
+Le conteneur est automatiquement démarrer et maintenu en activité.
+
+Il est possible de vérifier l'activité des conteneur avec la commande :
+
+```
+docker ps
+```
+
+OU
+
 ```
 docker container list
 ```
 
-Résultat obtenu :
+Vous devriez obtenir :
 
 ```
 CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                              NAMES
@@ -106,4 +116,4 @@ Contrairement à aux distributions linux de Debian à Ubuntu, le gestionnaire de
 apk add <package>
 ```
 
-### 1.6 - 
+### 1.6 - **[en cours ...]**

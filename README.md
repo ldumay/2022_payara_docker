@@ -24,15 +24,20 @@ Voici toutes la documentation utilisé.
 
 ### Docs officiels
 
-- Documentation officiel
-  - [Payara Micro Docker Image Overview](https://docs.payara.fish/community/docs/documentation/ecosystem/docker-images/micro-image-overview.html)
-- Documentation officiel communauté
-  - [Payara Micro dans Docker](https://blog.payara.fish/payara-micro-in-docker)
+- Alpine Linux
+  - [10 Alpine Linux apk Command Examples](https://www.cyberciti.biz/faq/10-alpine-linux-apk-command-examples/)
+- Payara
+  - Documentation officiel
+    - [Payara Micro Docker Image Overview](https://docs.payara.fish/community/docs/documentation/ecosystem/docker-images/micro-image-overview.html)
+  - Documentation officiel communauté
+    - [Payara Micro dans Docker](https://blog.payara.fish/payara-micro-in-docker)
 
 ### Docker Hub
 - Docker Hub
+  - [Debian](https://hub.docker.com/_/debian)
+  - [Jenkins](https://hub.docker.com/_/jenkins)
   - [Payara Micro](https://hub.docker.com/r/payara/micro)
 
-###Autres
+### Autres
 - Blog
   - [Using Payara Micro to run Java EE based Microservices](https://medium.com/oracledevs/java-ee-based-microservice-on-oracle-cloud-with-payara-micro-32f8f823103f)
