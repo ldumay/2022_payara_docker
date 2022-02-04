@@ -79,3 +79,138 @@ On va créer un conteneur debian nommé **payara_micro**.
 ```
 docker run -di --name payara_micro_1 -p 8080:8080 payara/micro
 ```
+
+#### 3.2.1 - Vérification de l'OS :
+
+```
+cat /etc/os-release
+```
+Résultat
+```
+NAME="Alpine Linux"
+ID=alpine
+VERSION_ID=3.14.2
+PRETTY_NAME="Alpine Linux v3.14"
+HOME_URL="https://alpinelinux.org/"
+BUG_REPORT_URL="https://bugs.alpinelinux.org/"
+```
+
+#### 3.2.2 - Ajout d'un package
+
+```
+apk add <package>
+```
+
+#### 3.2.3 - Connexion au conteneur
+
+##### 3.2.3.1 - Connexion normal
+
+```
+docker exec -it <container> /bin/sh
+```
+
+##### 3.2.3.2 - Connexion en tant qu'Admin
+
+```
+docker exec -u 0 -it <container> /bin/sh
+```
+
+##### 3.2.3.3 - Transfert de l'application au docker
+
+Copie d'une application **war** au dossier de déploiements Payara
+
+```
+docker cp <le_path_de_votre_appli>/<votre_appli_java>.war <container>:/opt/payara/deployments/
+```
+
+##### 3.2.3.4 - Démarrer le docker
+
+```
+docker run -p 8080:8080 \
+ -v ~/payara-micro/applications:/opt/payara/deployments \
+ payara/micro --deploy /opt/payara/deployments/<app>.war
+```
+
+---
+---
+---
+
+
+## [En cours]
+
+```
+mtl@MacBook-Pro-LDumay ~ % docker container list
+
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                              NAMES
+78921b98e444   payara/micro   "/bin/sh entrypoint.…"   25 seconds ago   Up 24 seconds   6900/tcp, 0.0.0.0:8080->8080/tcp   gifted_mayer
+
+mtl@MacBook-Pro-LDumay ~ % docker exec -it 78921b98e444 /bin/sh   
+```
+
+```
+java -jar payara-micro.jar --addJars deployments/
+```
+
+
+
+### 3.3 - Quelques commandes
+
+La liste des conteneurs
+
+```
+docker container list
+```
+
+Démarrer, Redémarrer, Stopper un conteneur
+
+```
+docker conainter start|restart|stop <container>
+```
+
+Renommer un conteneur
+
+```
+docker rename <conteneur> <nouveau_nom>
+```
+
+Connexion à un conteneur
+
+```
+docker exec -it <conteneur> bash
+```
+
+---
+
+https://medium.com/oracledevs/java-ee-based-microservice-on-oracle-cloud-with-payara-micro-32f8f823103f
+
+---
+
+TEMP
+
+java -jar payara-micro.jar --deploy deployments/YamaSoft-1.0.war
+
+java -Xms2048M -Xmx2048M -jar payara-micro-5.2021.10.jar --deploy YamaSoft-1.0.war
+
+
+
+---
+---
+---
+
+
+
+
+## Documentations
+
+Voici toutes la documentation utilisé.
+
+### Docs officiels
+
+- Documentation officiel
+  - [Payara Micro Docker Image Overview](https://docs.payara.fish/community/docs/documentation/ecosystem/docker-images/micro-image-overview.html)
+- Documentation officiel communauté
+  - [Payara Micro dans Docker](https://blog.payara.fish/payara-micro-in-docker)
+
+### Docker Hub
+- Docker Hub
+  - [Payara Micro](https://hub.docker.com/r/payara/micro)
