@@ -36,6 +36,9 @@ Voici toutes la documentation utilisé.
     - [Payara Micro Docker Image Overview](https://docs.payara.fish/community/docs/documentation/ecosystem/docker-images/micro-image-overview.html)
   - Documentation officiel communauté
     - [Payara Micro dans Docker](https://blog.payara.fish/payara-micro-in-docker)
+- Payara via Docker - **PDF**
+  - [Payara Micro](docs/Using-Payara-Micro-with-Docker2.pdf)
+  - [Payara Server](docs/Introduction_to_Payara_Server_Docker_Nodes_&_Instances.pdf)
 
 ### Docker Hub
 - Docker Hub
