@@ -1,6 +1,32 @@
-# Docker - Neo4j
+# Liste d'images et de conteneurs
 
-## 1 - Création d'un conteneur
+[Retour au README principale](../../)
+
+## 1 - OS - Ubuntu
+
+```
+docker run ubuntu:focal-20211006
+```
+
+### 2 - OS - Debian
+
+```
+docker run --name debian debian
+```
+
+### 3 - Intégration - Jenkins
+
+```
+docker run -d -p --name jenkins 8080:8080 jenkins/jenkins:lts
+```
+
+### 4 - NoSQL - MongoDB
+
+```
+docker run -d -p --name mongodb 27017:27017 mongo
+```
+
+### 5 - NoSQL - Neo4j
 
 ```
 docker run --name noe4j --publish=7474:7474 --publish=7687:7687 neo4j

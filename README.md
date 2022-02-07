@@ -20,7 +20,7 @@ Docker - disponible [ici](https://www.docker.com/get-started)
 
 Bonus :
 
-3. Conteneur de Neo4j[README_004.md]
+3. Liste d'images et de conteneurs [supplémentaires](README_bonus.md)
 
 ## 3 - Documentations
 
