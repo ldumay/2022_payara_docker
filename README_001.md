@@ -64,7 +64,7 @@ docker conainter start|restart|stop <container>
 docker rename <conteneur> <nouveau_nom>
 ```
 
-##### d)- Connexion au conteneur
+##### d) Connexion au conteneur
 
 Pour effectuer une connexion **normal** à un conteneur.
 
@@ -78,7 +78,13 @@ Pour effectuer une connexion **super admin** à un conteneur.
 docker exec -u 0 -it <container> /bin/sh
 ```
 
-### 1.5 - Transfert de fichier vers un conteneur
+### 1.5 - Intégralité complète d'un conteneur
+
+```
+docker inspect
+```
+
+### 1.6 - Transfert de fichier vers un conteneur
 
 ```
 docker cp <path_du_fichier>/<fichier> <container_cible>:<path_du_dossier_cible>
@@ -87,7 +93,7 @@ docker cp <path_du_fichier>/<fichier> <container_cible>:<path_du_dossier_cible>
 > *path : chemin d'un fichier
 
 
-
+---
 
 ### 1.4 - Vérification de l'OS :
 
