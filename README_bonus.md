@@ -20,6 +20,18 @@ docker run --name debian debian
 docker run -d -p --name jenkins 8080:8080 jenkins/jenkins:lts
 ```
 
+Pour la configuration
+
+```
+docker exec -u 0 -it jenkins bash
+```
+
+Accès au service :
+
+- Liens :
+    - Statut et détail du service : [http://localhost:50000/](http://localhost:50000/)
+    - Application du service : [http://localhost:8181/](http://localhost:8181/)
+
 ### 4 - NoSQL - MongoDB
 
 ```
