@@ -38,6 +38,8 @@ Il est possible de vérifier l'activité des conteneur avec la commande :
 docker ps
 ```
 
+> **Remarque** : ajouter l'option -a pour voir tous les conteneurs actif ou non
+
 OU
 
 ```
@@ -82,6 +84,65 @@ docker exec -u 0 -it <container> /bin/sh
 
 ```
 docker inspect
+```
+
+Exemple :
+
+```
+docker inspect debian
+[
+    {
+        "Id": "a8fd93e56b7e252f5e7fa461818c200a7942a19b14cf6f3ec882ca38bf43416a",
+        "Created": "2022-02-04T16:18:41.4584788Z",
+        "Path": "bash",
+        [...],
+        "HostConfig": {
+            [...],
+            "NetworkMode": "default",
+            "PortBindings": {
+                "80/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "80"
+                    }
+                ]
+            },
+            [...],
+        "Mounts": [],
+        "Config": {
+            "Hostname": "a8fd93e56b7e",
+            [...],
+            "Image": "debian",
+            [...]
+        },
+        "NetworkSettings": {
+            [...],
+            "Ports": {
+                "80/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "80"
+                    }
+                ]
+            },
+            [...],
+            "Gateway": "172.17.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "172.17.0.2",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "MacAddress": "02:42:ac:11:00:02",
+            "Networks": {
+                "bridge": {
+                    "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.2",
+                    [...]
+                }
+            }
+        }
+    }
+]
 ```
 
 ### 1.6 - Transfert de fichier vers un conteneur
