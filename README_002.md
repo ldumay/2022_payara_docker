@@ -1,5 +1,7 @@
 # Mini projet - Construction d'une mini infrastructure
 
+[Retour au README principale](../../)
+
 ## 1 - Création d'un docker Debian
 
 On va créer un conteneur debian nommé **debian**.
@@ -7,14 +9,6 @@ On va créer un conteneur debian nommé **debian**.
 ```
 docker run -di --name debian -p 80:80 debian
 ```
-
-> **Options de la commande** :
-> - **-di** :
->   - [...] 
-> - **--name debian** :
->   - permet de donner un précis le nom du conteneur
-> - **-p 80:80** :
->   - permet de précier le port de communication interne et externe du conteneur
 
 ## 2 - Création d'un docker MariaDB
 
@@ -42,7 +36,7 @@ docker run -it --rm mariadb mysql -h 0.0.0.0:3306 -u root -p
 On va créer un conteneur debian nommé **jenkins**.
 
 ```
-docker run -di --name jenkins -p 8080:8080 -p 50000:50000 -v /your/home:/var/jenkins_home jenkins:2.60.3
+docker run -di --name jenkins -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts
 ```
 
 ## 3 - Création d'un docker Payara Micro

@@ -21,6 +21,7 @@ Docker - disponible [ici](https://www.docker.com/get-started)
 Bonus :
 
 3. Liste d'images et de conteneurs [supplémentaires](README_bonus.md)
+4. Help docker [ici](README_help.md)
 
 ## 3 - Documentations
 
