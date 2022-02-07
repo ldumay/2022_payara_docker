@@ -47,3 +47,7 @@ Voici toutes la documentation utilisé.
 ### Autres
 - Blog
   - [Using Payara Micro to run Java EE based Microservices](https://medium.com/oracledevs/java-ee-based-microservice-on-oracle-cloud-with-payara-micro-32f8f823103f)
+
+## 4 - Bonus - Liste des ports et protocoles (Common ports)
+
+![Common ports](img_readme/common_ports.jpg)
