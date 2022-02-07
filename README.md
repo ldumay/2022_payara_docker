@@ -18,6 +18,10 @@ Docker - disponible [ici](https://www.docker.com/get-started)
 1. Vous aurez besoin de [quelques bases sur les conteneur de Docker](README_001.md)
 2. Le but est de [réaliser une mini infrastructure](README_002.md)
 
+Bonus :
+
+3. Conteneur de Neo4j[README_004.md]
+
 ## 3 - Documentations
 
 Voici toutes la documentation utilisé.
@@ -37,6 +41,7 @@ Voici toutes la documentation utilisé.
   - [Debian](https://hub.docker.com/_/debian)
   - [Jenkins](https://hub.docker.com/_/jenkins)
   - [Mariadb](https://hub.docker.com/_/mariadb)
+  - [Neo4j](https://hub.docker.com/\_/neo4j)
   - [Payara Micro](https://hub.docker.com/r/payara/micro)
 
 ### Autres
