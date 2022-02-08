@@ -1,9 +1,12 @@
 # Guide d'utilisation de Payara Micro sur Docker
 
-Anciens dépots à supprimer :
+## 0 - Pourquoi Docker ?
 
-- [Learn Payara](https://github.com/ldumay/2022_payara_learn)
-- [Guide Docker](https://github.com/ldumay/docker_guide)
+### VM (Mahcine Virtuel) vs Conteneur
+
+![vm_vs_container](/img_readme/vm_vs_container.png)
+
+Parce qu'un conteneur est beaucoup léger.
 
 ## 1 - Pré-requis
 
@@ -15,17 +18,23 @@ Docker - disponible [ici](https://www.docker.com/get-started)
 
 ## 2 - Les Etapes à suivre pour ce projet :
 
-1. Vous aurez besoin de [quelques bases sur les conteneur de Docker](README_001.md)
-2. Le but est de [réaliser une mini infrastructure](README_002.md)
-
-Bonus :
-
-3. Liste d'images et de conteneurs [supplémentaires](README_bonus.md)
-4. Help docker [ici](README_help.md)
+- 1 - Vous aurez besoin de quelques bases sur les conteneur et les images de Docker :
+  - Partie 1 - [Les conteneurs](README_001.md)
+  - Partie 2 - [Les images](README_002.md)
+  - Partie 3 - [Les couches](README_003.md)
+  - Partie 4 - [Les microservices](README_004.md)
+- 2 - Le but est de [réaliser une mini infrastructure](README_TP.md)
+- 3 - Bonus :
+  - Liste d'images et de conteneurs [supplémentaires](README_bonus.md)
+  - Help docker [ici](README_help.md)
 
 ## 3 - Documentations
 
 Voici toutes la documentation utilisé.
+
+### Source principal d'apprentissage :
+
+- Youtube [TUTORIALS ET FORMATION DOCKER](https://www.youtube.com/playlist?list=PLn6POgpklwWq0iz59-px2z-qjDdZKEvWd)
 
 ### Docs officiels
 

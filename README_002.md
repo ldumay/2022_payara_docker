@@ -1,90 +1,88 @@
-# Mini projet - Construction d'une mini infrastructure
+# Les bases de Docker
 
 [Retour au README principale](../../)
 
-## 1 - Création d'un docker Debian
+## Partie 2 - Les Images
 
-On va créer un conteneur debian nommé **debian**.
+#### 1.1 - Création d'une image
 
-```
-docker run -di --name debian -p 80:80 debian
-```
-
-## 2 - Création d'un docker MariaDB
-
-On va créer un conteneur debian nommé **mariadb**.
+##### a) A partir d'un conteneur
 
 ```
-docker run --detach --name mariadb --env MARIADB_USER=ldumay --env MARIADB_PASSWORD=test --env MARIADB_ROOT_PASSWORD=root -p 3306:3306 mariadb:latest
+docker commit -m='<description>' --author='<author>' <id_du_conteneur_source> <nom_image>:<nb_version>
 ```
 
-Pour se connecté au serveur mariadb, il faut connaitre l'**IP du conteneur**.
+##### b) A partir d'un dockerfile
+
+dockerfile :
+
+- fichier de configuration
+- objectif : création d'une image
+- séquence d'instructions :
+    - RUN : lancements de commandes (apt)
+    - ENV : variables d'environnement
+    - EXPOSE : expositions de ports
+    - VOLUME : définition de volumes
+    - COPY : cp entre host et conteneur
+    - ENTRYPOINT : processus maîre
+    - [...]
+- Intérêts :
+    - relancer une création d'image à tout moment
+    - meilleur visibilité sur ce qui est fait
+    - partage facile et possibilité de gitter
+    - script d'édition de docker file (variables...)
+    - ne pas se poser de question lors du *docker run* du conteneur
+    - création images prod // dev - [CI // CD](https://fr.wikipedia.org/wiki/CI/CD) ![CI_and_CD](img_readme/CI_and_CD.png)
+
+##### c) Exemple :
+
+Exemple d'un **dockerfile** :
 
 ```
-docker run -it --rm mariadb mysql -h 0.0.0.0:3306 -u ldumay -p
+FROM <name_dépôt>
+MAINTAINER <name_author>
+RUN apt-get update \
+&& apt-get install -y nano git \
+&& apt-get clean \
+&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 ```
 
-OU
+Exemple de commande d'exécution de compilation d'un **dockerfile** :
 
 ```
-docker stop mariadb
-docker run -it --rm mariadb mysql -h 0.0.0.0:3306 -u root -p
+docker build -t <nom_image>:<version>
 ```
 
-## 2 - Création d'un docker Jenkins
+Un autre exemple est disponible dans le dossier **/dockerfile_demos/** : [dockerfile](/dockerfile_demos/dockerfile).
 
-On va créer un conteneur debian nommé **jenkins**.
-
-```
-docker run -di --name jenkins -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts
-```
-
-## 3 - Création d'un docker Payara Micro
-
-On va créer un conteneur debian nommé **payara_micro**.
+Si vous avier clone le dépôt sur votre machine, il est possible de compiler le dockerfile avec la commande si dessus :
 
 ```
-docker run -di --name payara_micro_1 -p 8081:8081 payara/micro
+docker build -t debianldumay:v1.0 .
 ```
 
-### a - Transfert de l'application java au conteneur
+> Attention, 2 points important :
+> - placez-vous bien dans le dossier contenant le **dockerfile** pour pouvoir exécuter la commande
+> - le "." est important pour.
 
-Copie d'une application **war** au dossier de déploiements Payara
+Aide sur les dockerfile [ici](https://docs.docker.com/engine/reference/builder/#maintainer).
 
-```
-docker cp <le_path_de_votre_appli>/<votre_appli_java>.war <container>:/opt/payara/deployments/
-```
+#### 1.2 - Informations sur une images
 
-### b - Démarrer le conteneur avec l'application
-
-```
-docker run -p 8080:8080 \
- -v ~/payara-micro/applications:/opt/payara/deployments \
- payara/micro --deploy /opt/payara/deployments/<app>.war
-```
-
----
----
-
-# TEMP
+Connaitre l'historique d'une image
 
 ```
-java -jar payara-micro.jar --addJars deployments/
+docker history <image>
 ```
 
-java -jar payara-micro.jar --deploy deployments/YamaSoft-1.0.war
-
-java -Xms2048M -Xmx2048M -jar payara-micro-5.2021.10.jar --deploy YamaSoft-1.0.war
-
----
----
-
-# Essais :
-
-Redémarrage avec persistance :
+#### 1.3 - Tester et fixer les vulnérabilités d'images
 
 ```
-docker stop payara_micro_1
-docker run -di --name payara_micro_1 -p 8081:8081 -v /Users/mtl/Projets/Docker/_docker_share_directory/apps_java_web:/opt/payara/deployments payara/micro
-docker exec -u 0 -it payara_micro_1 sh 
+docker scan
+```
+
+#### 1.3 - Suppresion d'une image
+
+```
+docker image rm <id_image>
 ```
