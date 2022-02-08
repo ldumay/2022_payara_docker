@@ -48,3 +48,23 @@ microservices_demo % tree
 
 3 directories, 7 files
 ```
+
+#### 2.2 - Préparation et démarrage de l'exemple
+
+```
+cd worker1
+docker build -t worker1:1.0 .
+
+cd ../worker2
+docker build -t worker2:1.0 .
+
+cd ../serveurweb
+docker build -t serveurweb:1.0 .
+
+cd ../
+docker run -tid --name site -p 80:80 serveurweb:1.0
+docker run -tid --name worker1 --volumes-from site worker1:1.0
+docker run -tid --name worker2 --volumes-from site worker2:1.0
+```
+
+Accessible via [http://localhost:80](http://localhost:80)

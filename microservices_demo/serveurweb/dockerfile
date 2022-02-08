@@ -1,5 +1,6 @@
+# Vesrion 1.0 - OK
 FROM ubuntu:latest
 RUN apt-get update
-RUN apte-get install -y nginx
+RUN apt-get install -y nginx
 VOLUME /var/www/html/
 ENTRYPOINT ["nginx", "-g", "daemon off;"]

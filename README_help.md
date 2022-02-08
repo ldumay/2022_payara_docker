@@ -28,6 +28,8 @@ docker run -<vos_options> --<vos_options>
     - [...]
 - **-v <path_folder_hôte>:<path_folder_conteneur>** :
     - permet de partage de synchroniser des données entre le l'hôte et un conteneur à travers une dossier enregistré en tant que **volume** docker.
+- **--volumes-from <nom_conteneur>** :
+    - permet de se relier au volume d'un contener
 
 ## 2 - Options de la commande `exec`
 

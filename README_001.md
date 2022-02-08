@@ -141,6 +141,18 @@ docker inspect debian
 ]
 ```
 
+Il es possible de inspecter un élément en particulier d'un conteneur, tel que :
+
+```
+docker inspect -f "{{.Name}} -- {{.NetworkSettings.IPAddress}}" <nom_conteneur> 
+```
+
+Voici en bonus une boucle pour inspecter un élément en particulier de plusieurs conteneurs
+
+```
+for id in $(docker ps -aq); do docker inspect -f "{{.Name}} -- {{.NetworkSettings.IPAddress}}" $id; done
+```
+
 ### 1.4 - Transfert de fichier vers un conteneur
 
 ```
