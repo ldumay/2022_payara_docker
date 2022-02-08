@@ -1,0 +1,7 @@
+FROM debian:latest
+MAINTAINER ldumay
+RUN apt update \
+&& apt upgrade \
+&& apt install -y nano tree wget git \
+&& apt clean \
+&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

@@ -65,9 +65,8 @@ docker run -p 8080:8080 \
 
 ---
 ---
----
 
-TEMP
+# TEMP
 
 ```
 java -jar payara-micro.jar --addJars deployments/
@@ -76,3 +75,16 @@ java -jar payara-micro.jar --addJars deployments/
 java -jar payara-micro.jar --deploy deployments/YamaSoft-1.0.war
 
 java -Xms2048M -Xmx2048M -jar payara-micro-5.2021.10.jar --deploy YamaSoft-1.0.war
+
+---
+---
+
+# Essais :
+
+Redémarrage avec persistance :
+
+```
+docker stop payara_micro_1
+docker run -di --name payara_micro_1 -p 8081:8081 -v /Users/mtl/Projets/Docker/_docker_share_directory/apps_java_web:/opt/payara/deployments payara/micro
+docker exec -u 0 -it payara_micro_1 sh 
+```
