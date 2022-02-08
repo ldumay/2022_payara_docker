@@ -1,4 +1,4 @@
-# Vesrion 1.0 - OK
+# Version 1.0 - OK
 FROM php:7.2-cli
 COPY rollon.sh /
 COPY affichage.php /
