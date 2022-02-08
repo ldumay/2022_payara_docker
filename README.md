@@ -23,6 +23,7 @@ Docker - disponible [ici](https://www.docker.com/get-started)
   - Partie 2 - [Les images](README_002.md)
   - Partie 3 - [Les couches](README_003.md)
   - Partie 4 - [Les microservices](README_004.md)
+  - Partie 5 - [Le cache](README_005.md)
 - 2 - Le but est de [réaliser une mini infrastructure](README_TP.md)
 - 3 - Bonus :
   - Liste d'images et de conteneurs [supplémentaires](README_bonus.md)
