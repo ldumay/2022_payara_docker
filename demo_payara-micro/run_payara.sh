@@ -1,1 +1,11 @@
-java -Xms2048M -Xmx2048M -jar payara-micro.jar --deploy /opt/payara/deployments/*.war
+#!/bin/sh
+set -e
+
+exec java
+-XX:MaxRAMPercentage=${MEM_MAX_RAM_PERCENTAGE}
+-Xss${MEM_XSS}
+-Xms${MEM_XMS}
+-Xmx${MEM_XMX}
+-XX:+UseContainerSupport ${JVM_ARGS}
+-jar payara-micro.jar "$@"
+--nocluster

@@ -6,6 +6,9 @@
 # Récupérartion de la dernière vesrion de Payara Micro
 FROM payara/micro:5.2021.10-jdk11
 
+# Mise à jour et mise à niveau du noyaux du conteneur
+CMD ["/bin/sh/", "apk update && apk upgrade"]
+
 # Informations de l'image à crée
 LABEL "fr.ldumay.payaramicro"="Payara Micro"
 LABEL version="1.0.0"
@@ -23,22 +26,39 @@ EXPOSE 6901/udp
 EXPOSE 8080/tcp
 EXPOSE 8080/udp
 
+# Variables
+ENV LANG=fr_FR.UTF-8
+ENV LANGUAGE=fr_FR.UTF-8
+ENV LC_ALL=fr_FR.UTF-8
+ENV HOME_DIR=/opt/payara
+ENV PAYARA_HOME=/opt/payara
+ENV PAYARA_DIR=/opt/payara
+ENV SCRIPT_DIR=/opt/payara
+ENV DEPLOY_DIR=/opt/payara/deployments
+ENV JVM_ARGS=
+ENV MEM_XSS=1024M
+ENV MEM_XMS=1024M
+ENV MEM_XMX=1024M
+ENV MEM_MAX_RAM_PERCENTAGE=70.0
+
+# Configuration de l'utilisateur
+USER payara
+
+# Définition du répertoire de travail
+WORKDIR /opt/payara
+
 # Création du point de montage nécessaire
 VOLUME /opt/payara/deployments/
 
 # Permet d'ajouter des fichiers au conteneur
+ADD /run_payara.sh /opt/payara/
 ADD /apps_java_shared/* /opt/payara/deployments/
 
 # Permet de copier des fichiers au conteneur
 COPY /apps_java_shared/* /opt/payara/deployments/
 
-# Execution des commandes nécessaires
-CMD ["/bin/sh/", "apk update && apk upgrade"]
-
 # Intialisation du projet
-ENTRYPOINT ["java", "-jar", "payara-micro.jar"]
-#ENTRYPOINT ["java", "-Xms2048M", "-Xmx2048M", "-jar", "payara-micro.jar", "--deploy /opt/payara/deployments/*.war"]
+ENTRYPOINT ["/bin/sh" "entrypoint.sh"]
 
-#CMD ["--nocluster", "--deploymentDir", "/opt/payara/deployments"]
-
-#ENTRYPOINT ["nginx", "-g", "daemon off;"]
+# Deploiement des applis du conteneur
+CMD ["--deploymentDir" "/opt/payara/deployments"]
