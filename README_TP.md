@@ -79,6 +79,14 @@ java -Xms2048M -Xmx2048M -jar payara-micro-5.2021.10.jar --deploy YamaSoft-1.0.w
 ---
 ---
 
+# Tests
+
+docker run -di --name payara0 -p 81:81 payara/micro
+docker exec -u 0 -it payara0 /bin/sh
+
+---
+---
+
 # Essais :
 
 Redémarrage avec persistance :

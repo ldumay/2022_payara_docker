@@ -1,0 +1,44 @@
+# Version 1.0.0
+# Conteneur Payara Miro
+# - OS : Alpine Linux
+# - JDK : 5.2021.10-jdk11
+
+# Récupérartion de la dernière vesrion de Payara Micro
+FROM payara/micro:5.2021.10-jdk11
+
+# Informations de l'image à crée
+LABEL "fr.ldumay.payaramicro"="Payara Micro"
+LABEL version="1.0.0"
+LABEL description="Demo de Payara Micro"
+
+# Configurationd des ports
+# - port nécessaire :
+#   - 6900 - DataGrid - Name: Happy-Lionfish Lite
+EXPOSE 6900/tcp
+EXPOSE 6900/udp
+#   - 6901 - DataGrid - Excited-Ide Lite
+EXPOSE 6901/tcp
+EXPOSE 6901/udp
+#   - 8080 - Apps
+EXPOSE 8080/tcp
+EXPOSE 8080/udp
+
+# Création du point de montage nécessaire
+VOLUME /opt/payara/deployments/
+
+# Permet d'ajouter des fichiers au conteneur
+ADD /apps_java_shared/* /opt/payara/deployments/
+
+# Permet de copier des fichiers au conteneur
+COPY /apps_java_shared/* /opt/payara/deployments/
+
+# Execution des commandes nécessaires
+CMD ["/bin/sh/", "apk update && apk upgrade"]
+
+# Intialisation du projet
+ENTRYPOINT ["java", "-jar", "payara-micro.jar"]
+#ENTRYPOINT ["java", "-Xms2048M", "-Xmx2048M", "-jar", "payara-micro.jar", "--deploy /opt/payara/deployments/*.war"]
+
+#CMD ["--nocluster", "--deploymentDir", "/opt/payara/deployments"]
+
+#ENTRYPOINT ["nginx", "-g", "daemon off;"]

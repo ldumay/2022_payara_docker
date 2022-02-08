@@ -1,0 +1,1 @@
+java -Xms2048M -Xmx2048M -jar payara-micro.jar --deploy /opt/payara/deployments/*.war
