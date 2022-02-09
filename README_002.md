@@ -4,15 +4,15 @@
 
 ## Partie 2 - Les Images
 
-#### 1.1 - Création d'une image
+### 1.1 - Création d'une image
 
-##### a) A partir d'un conteneur
+#### a) A partir d'un conteneur
 
 ```
 docker commit -m='<description>' --author='<author>' <id_du_conteneur_source> <nom_image>:<nb_version>
 ```
 
-##### b) A partir d'un dockerfile
+#### b) A partir d'un dockerfile
 
 dockerfile :
 
@@ -34,7 +34,7 @@ dockerfile :
     - ne pas se poser de question lors du *docker run* du conteneur
     - création images prod // dev - [CI // CD](https://fr.wikipedia.org/wiki/CI/CD) ![CI_and_CD](img_readme/CI_and_CD.png)
 
-##### c) Exemple :
+#### c) Exemple :
 
 Exemple d'un **dockerfile** :
 
@@ -67,7 +67,7 @@ docker build -t debianldumay:v1.0 .
 
 Aide sur les dockerfile [ici](https://docs.docker.com/engine/reference/builder/#maintainer).
 
-#### 1.2 - Informations sur une images
+### 1.2 - Informations sur une images
 
 Connaitre l'historique d'une image
 
@@ -75,14 +75,26 @@ Connaitre l'historique d'une image
 docker history <image>
 ```
 
-#### 1.3 - Tester et fixer les vulnérabilités d'images
+### 1.3 - Tester et fixer les vulnérabilités d'images
 
 ```
 docker scan
 ```
 
-#### 1.3 - Suppresion d'une image
+### 1.3 - Suppresion d'une image
 
 ```
 docker image rm <id_image>
 ```
+
+### 2.1 - Vérifier une image
+
+#### 2.1.1 - TUI - DocUI - Outil de lecture d'image docker
+
+```
+brew install docui
+```
+
+GitHub - [docui](https://github.com/skanehira/docui)
+
+![docui](/img_readme/docui.gif)

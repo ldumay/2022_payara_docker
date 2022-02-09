@@ -26,7 +26,7 @@ EXPOSE 6901/udp
 EXPOSE 8080/tcp
 EXPOSE 8080/udp
 
-# Variables
+# Variables nécessaires au bon fonctionnement du conteneur
 ENV LANG=fr_FR.UTF-8
 ENV LANGUAGE=fr_FR.UTF-8
 ENV LC_ALL=fr_FR.UTF-8
@@ -35,6 +35,7 @@ ENV PAYARA_HOME=/opt/payara
 ENV PAYARA_DIR=/opt/payara
 ENV SCRIPT_DIR=/opt/payara
 ENV DEPLOY_DIR=/opt/payara/deployments
+#   - Rattaché au fichier exécutable run_payara.sh
 ENV JVM_ARGS=
 ENV MEM_XSS=1024M
 ENV MEM_XMS=1024M
@@ -58,7 +59,7 @@ ADD /apps_java_shared/* /opt/payara/deployments/
 COPY /apps_java_shared/* /opt/payara/deployments/
 
 # Intialisation du projet
-ENTRYPOINT ["/bin/sh" "entrypoint.sh"]
+ENTRYPOINT ["/bin/sh" "run_payara.sh"]
 
 # Deploiement des applis du conteneur
 CMD ["--deploymentDir" "/opt/payara/deployments"]
