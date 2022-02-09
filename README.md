@@ -19,13 +19,15 @@ Docker - disponible [ici](https://www.docker.com/get-started)
 ## 2 - Les Etapes à suivre pour ce projet :
 
 - 1 - Vous aurez besoin de quelques bases sur les conteneur et les images de Docker :
-  - Partie 1 - [Les conteneurs](README_001.md)
-  - Partie 2 - [Les images](README_002.md)
-  - Partie 3 - [Les couches](README_003.md)
-  - Partie 4 - [Les microservices](README_004.md)
-  - Partie 5 - [Le cache](README_005.md)
-- 2 - Le but est de [réaliser une mini infrastructure](README_TP.md)
-- 3 - Bonus :
+  - **[Requis]\*** - Partie 1 - [Les conteneurs](README_001.md)
+  - **[Requis]\*** - Partie 2 - [Les images](README_002.md)
+  - **[Requis]\*** - Partie 3 - [Les couches](README_003.md)
+  - **[Requis]\*** - Partie 4 - [Les microservices](README_004.md)
+  - **[Requis]\*** - Partie 5 - [L'historique et logs d'une images ou d'un conteneur](README_005.md)
+  - Partie 6 - [Le cache](README_006.md)
+- 2 - Ldumay - Payara Micro - [Un conteneur Apps Java JEE avec Payara Miro](/demo_ldpayaramicro/README.md)
+- 3 - Le but est de [réaliser une mini infrastructure](README_TP.md)
+- 4 - Bonus :
   - Liste d'images et de conteneurs [supplémentaires](README_bonus.md)
   - Help docker [ici](README_help.md)
 

@@ -86,15 +86,3 @@ docker scan
 ```
 docker image rm <id_image>
 ```
-
-### 2.1 - Vérifier une image
-
-#### 2.1.1 - TUI - DocUI - Outil de lecture d'image docker
-
-```
-brew install docui
-```
-
-GitHub - [docui](https://github.com/skanehira/docui)
-
-![docui](/img_readme/docui.gif)

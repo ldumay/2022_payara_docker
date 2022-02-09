@@ -46,5 +46,5 @@ docker image rm ldpayaramicro:1.0.0
 
 L'url principale est http://localhost:8080/<nom_de_app>
 
-[http://localhost:8080/DemoWebApp](http://localhost:8080/DemoWebApp)
-[http://localhost:8080/WebDemo](http://localhost:8080/WebDemo)
+- [http://localhost:8080/DemoWebApp](http://localhost:8080/DemoWebApp)
+- [http://localhost:8080/WebDemo](http://localhost:8080/WebDemo)
