@@ -11,7 +11,7 @@ Pour pouvoir un nouveau conteneur, il est néceassaire d'avoir une image. L'avan
 Vous pouvez-vous donc créer un nouveau conteneur via la commande ci-dessous :
 
 ```
-docker run <image>
+docker run <conteneur>
 ```
 
 Cette commande télécharge directement l'image si elle n'a pas télécharger auparavant.

@@ -76,6 +76,9 @@ java -jar payara-micro.jar --deploy deployments/YamaSoft-1.0.war
 
 java -Xms2048M -Xmx2048M -jar payara-micro-5.2021.10.jar --deploy YamaSoft-1.0.war
 
+java -jar payara-micro.jar --deploy deployments/*.war
+
+
 ---
 ---
 
