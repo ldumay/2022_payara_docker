@@ -21,7 +21,19 @@ Le dossier **/apps_java_shared/** contient les applications Java JEE compilées 
 Le dossier **/apps_java_src/** contient la sources des petits projets de demo.
 
 ```
-arborescence
+.
+├── README.md
+├── apps_java_shared
+│   ├── DemoWebApp.war
+│   └── WebDemo.war
+├── apps_java_src
+│   └── DemoWebApp.zip
+├── dockerfile
+├── jar_files_payara_micro
+│   └── payara-micro-5.2021.10.jar
+└── run_payara.sh
+
+3 directories, 7 files
 ```
 
 ## 3 - Exécution du conteneur
