@@ -43,7 +43,7 @@ Le dossier **/apps_java_src/** contient la sources des petits projets de demo.
 ```
 cd demo_ldpayaramicro
 docker build -t ldpayaramicro:1.0.0 .
-docker run -tid --name ldpm_1 -p 8080:8080 -p 3306:3306 ldpayaramicro:1.0.0
+docker run -tid --name ldpm_1 -p 8080:8080 ldpayaramicro:1.0.0
 ```
 
 ### 2.2 - Suppression du conteneur et de l'image
