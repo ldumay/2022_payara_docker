@@ -29,7 +29,7 @@ Docker - disponible [ici](https://www.docker.com/get-started)
 > **NB** : Pour les points ci-dessous, il est nécessaie d'avoir des bases en docker. Dans le cas contraire, veuillez suivre les points **[Requis]\***.
 
 - 2 - Ldumay - Payara Micro - [Un conteneur Apps Java JEE avec Payara Miro](/demo_ldpayaramicro/README.md)
-- 3 - Le but est de [réaliser une mini infrastructure](README_TP.md)
+- 3 - Ldumay - Payara Micro & MySQL & Monitoring - [Réaliser une mini infrastructure](README_TP.md)
 - 4 - Bonus :
   - Liste d'images et de conteneurs [supplémentaires](README_bonus.md)
   - Help docker [ici](README_help.md)
