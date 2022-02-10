@@ -17,7 +17,7 @@ docker run --name debian debian
 ### 3 - Intégration - Jenkins
 
 ```
-docker run -d -p --name jenkins 8080:8080 jenkins/jenkins:lts
+docker run -tid --name jenkins -p 8888:8080 -p 50000:50000 jenkins/jenkins:lts
 ```
 
 Pour la configuration
