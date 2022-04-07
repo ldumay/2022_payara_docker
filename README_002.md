@@ -6,13 +6,19 @@
 
 ### 1.1 - Création d'une image
 
-#### a) A partir d'un conteneur
+#### a) Liste des images
+
+```
+docker images
+```
+
+#### b) A partir d'un conteneur
 
 ```
 docker commit -m='<description>' --author='<author>' <id_du_conteneur_source> <nom_image>:<nb_version>
 ```
 
-#### b) A partir d'un dockerfile
+#### c) A partir d'un dockerfile
 
 dockerfile :
 
@@ -34,7 +40,7 @@ dockerfile :
     - ne pas se poser de question lors du *docker run* du conteneur
     - création images prod // dev - [CI // CD](https://fr.wikipedia.org/wiki/CI/CD) ![CI_and_CD](img_readme/CI_and_CD.png)
 
-#### c) Exemple :
+#### d) Exemple :
 
 Exemple d'un **dockerfile** :
 
